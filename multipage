@@ -3,6 +3,13 @@
 
 # Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
 
+"""
+Takes a single image file as argument and open the series in the browser.
+
+It assumes that your images are named `something+1.ext`, `something+2.ext`
+where only the number changes and there is no other `+number` in the file name.
+"""
+
 __docformat__ = "javadoc en"
 
 import glob
