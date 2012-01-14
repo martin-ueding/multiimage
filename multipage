@@ -5,14 +5,48 @@
 
 __docformat__ = "javadoc en"
 
+import glob
 import optparse
+import os
+import re
+import subprocess
+import tempfile
 
 def main():
-    #parser = optparse.OptionParser(usage=, description=)
+    parser = optparse.OptionParser(usage="", description="")
     #parser.add_option("", dest="", type="", default=, help=)
 
-    #(options, args) = parser.parse_args()
-    #del parser
+    (options, args) = parser.parse_args()
+    del parser
+
+    tmp = tempfile.NamedTemporaryFile(mode="w+", suffix=".html", delete=False)
+
+    infile = args[0]
+
+    pattern = re.sub(r"\+\d+", "+*", infile)
+
+    tmp.write(r"""<!doctype html>
+              <html>
+              <head>
+              <style type="text/css">
+              img {
+                  display: block;
+                  margin: 0 auto 10px auto;
+                  box-shadow: 4px 4px 10px #777;
+                 }
+              </style>
+              </head>
+              <body>""")
+
+    for arg in sorted(glob.glob(pattern)):
+        tmp.write('<img src="file://%s" width="95%%" />\n' % arg)
+
+    tmp.write(r"""</body>
+              </html>""")
+
+    tmp.seek(0)
+
+    subprocess.call(["firefox", tmp.name])
 
 
 if __name__ == "__main__":
