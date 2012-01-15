@@ -70,13 +70,13 @@ def write_html(filelist):
               <style type="text/css">
               body {
                   background-color: #DDD;
-              padding: 10px;
-                 }
+                  padding: 10px;
+              }
               img {
                   display: block;
                   margin: 0 auto 20px auto;
                   box-shadow: 4px 4px 10px #333;
-                 }
+              }
               </style>
               </head>
               <body>""")
