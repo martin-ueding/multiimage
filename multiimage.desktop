@@ -4,6 +4,7 @@ Name=multiimage
 GenericName=Multiple Image Viewer
 Exec=multiimage
 Icon=multiimage
+MimeType=image/jpeg;
 Terminal=false
 Categories=Graphics;Viewer;
 StartupNotify=false
