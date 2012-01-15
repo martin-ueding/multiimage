@@ -4,6 +4,9 @@ pythonfiles:=$(wildcard *.py)
 
 epydoc: html/index.html
 
+multiimage.png: multiimage.svg
+	inkscape $< --export-png=$@ -w128 -h128
+
 html/index.html: multiimage $(pythonfiles)
 	epydoc $<
 
