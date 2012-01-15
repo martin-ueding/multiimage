@@ -4,8 +4,10 @@ pythonfiles:=$(wildcard *.py)
 
 epydoc: html/index.html
 
-install:
-	install multiimage $(DESTDIR)/usr/bin/multiimage
+install: multiimage.png
+	install multiimage $(DESTDIR)/usr/bin/
+	install multiimage.desktop $(DESTDIR)/usr/share/applications/
+	install multiimage.png $(DESTDIR)/usr/share/pixmaps/
 
 multiimage.png: multiimage.svg
 	inkscape $< --export-png=$@ -w128 -h128
