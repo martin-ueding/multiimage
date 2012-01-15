@@ -26,13 +26,39 @@ def main():
     (options, args) = parser.parse_args()
     del parser
 
-    tmp = tempfile.NamedTemporaryFile(mode="w+", suffix=".html", delete=False)
-
     infile = args[0]
     if infile[0] != "/":
         infile = os.getcwd()+"/"+infile
 
     pattern = re.sub(r"\+\d+", "+*", infile)
+
+    tempfile = write_html(sorted(glob.glob(pattern)))
+
+    open_in_browser(tempfile)
+
+
+def open_in_browser(filename):
+    """
+    Opens a file in a web browser.
+
+    Currently, this is Firefox.
+
+    @param filename File to open.
+    """
+    subprocess.call(["firefox", filename])
+
+
+def write_html(filelist):
+    """
+    Writes a HTML file with the given images.
+
+    Some CSS is added to the header so that the pages look like in other PDF
+    viewers. The target file is a temporary file.
+
+    @param filelist List with image files.
+    @return HTML file name.
+    """
+    tmp = tempfile.NamedTemporaryFile(mode="w+", suffix=".html", delete=False)
 
     tmp.write(r"""<!doctype html>
               <html>
@@ -51,15 +77,15 @@ def main():
               </head>
               <body>""")
 
-    for arg in sorted(glob.glob(pattern)):
+    for arg in filelist:
         tmp.write('<img src="file://%s" width="100%%" />\n' % arg)
 
     tmp.write(r"""</body>
               </html>""")
 
-    tmp.seek(0)
+    tmp.close()
 
-    subprocess.call(["firefox", tmp.name])
+    return tmp.name
 
 
 if __name__ == "__main__":
