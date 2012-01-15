@@ -20,8 +20,7 @@ import subprocess
 import tempfile
 
 def main():
-    parser = optparse.OptionParser(usage="", description="")
-    #parser.add_option("", dest="", type="", default=, help=)
+    parser = optparse.OptionParser(usage="%prog imagefile+number.suffix", description="Opens up a sequence of pictures in a web browser.")
 
     (options, args) = parser.parse_args()
     del parser
