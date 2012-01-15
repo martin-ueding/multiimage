@@ -18,12 +18,17 @@ import os
 import re
 import subprocess
 import tempfile
+import sys
 
 def main():
     parser = optparse.OptionParser(usage="%prog imagefile+number.suffix", description="Opens up a sequence of pictures in a web browser.")
 
     (options, args) = parser.parse_args()
     del parser
+
+    if len(args) == 0:
+        print "Error: File argument needed."
+        sys.exit(1)
 
     infile = args[0]
     if infile[0] != "/":
