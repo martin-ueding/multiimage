@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=multiimage
+GenericName=Multiple Image Viewer
+Exec=multiimage
+Icon=multiimage
+Terminal=false
+Categories=Graphics
