@@ -8,7 +8,7 @@ multiimage.png: multiimage.svg
 	inkscape $< --export-png=$@ -w128 -h128
 
 html/index.html: multiimage $(pythonfiles)
-	epydoc $<
+	epydoc $^
 
 .PHONY: clean
 clean:
