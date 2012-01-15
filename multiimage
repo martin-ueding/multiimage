@@ -17,8 +17,8 @@ import optparse
 import os
 import re
 import subprocess
-import tempfile
 import sys
+import tempfile
 
 def main():
     parser = optparse.OptionParser(usage="%prog imagefile+number.suffix", description="Opens up a sequence of pictures in a web browser.")
