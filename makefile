@@ -12,6 +12,9 @@ install: multiimage.png
 multiimage.png: multiimage.svg
 	inkscape $< --export-png=$@ -w128 -h128
 
+validate:
+	desktop-file-validate multiimage.desktop
+
 html/index.html: multiimage $(pythonfiles)
 	epydoc $^
 
