@@ -29,6 +29,8 @@ def main():
     tmp = tempfile.NamedTemporaryFile(mode="w+", suffix=".html", delete=False)
 
     infile = args[0]
+    if infile[0] != "/":
+        infile = os.getcwd()+"/"+infile
 
     pattern = re.sub(r"\+\d+", "+*", infile)
 
