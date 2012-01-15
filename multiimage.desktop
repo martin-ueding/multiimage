@@ -5,4 +5,4 @@ GenericName=Multiple Image Viewer
 Exec=multiimage
 Icon=multiimage
 Terminal=false
-Categories=Graphics
+Categories=Graphics;Viewer;
