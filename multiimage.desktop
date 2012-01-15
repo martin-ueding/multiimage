@@ -6,3 +6,4 @@ Exec=multiimage
 Icon=multiimage
 Terminal=false
 Categories=Graphics;Viewer;
+StartupNotify=false
