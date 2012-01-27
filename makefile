@@ -16,7 +16,7 @@ validate:
 	desktop-file-validate multiimage.desktop
 
 html/index.html: multiimage $(pythonfiles)
-	epydoc $^
+	epydoc -v $^
 
 .PHONY: clean
 clean:
