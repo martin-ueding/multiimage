@@ -19,10 +19,7 @@ import sys
 import tempfile
 
 def main():
-    parser = optparse.OptionParser(usage="%prog imagefile+number.suffix", description="Opens up a sequence of pictures in a web browser.")
-
-    (options, args) = parser.parse_args()
-    del parser
+    options, args = _parse_args()
 
     if len(args) == 0:
         print "Error: File argument needed."
@@ -90,6 +87,18 @@ def write_html(filelist):
     tmp.close()
 
     return tmp.name
+
+
+def _parse_args():
+    """
+    Parses the command line arguments.
+
+    @return: Tuple with options and (positional) arguments.
+    @rtype: tuple
+    """
+    parser = optparse.OptionParser(usage="%prog imagefile+number.suffix", description="Opens up a sequence of pictures in a web browser.")
+
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
