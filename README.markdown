@@ -1,3 +1,5 @@
+# multiimage
+
 A lot of my scanned images are plain JPEG files. When I have a multiple page document, it will become multiple images.
 
 One could join them into a single PDF file, but I'd rather have the original files since images in PDF usually look blurrier. With text, it makes it harder to read.
@@ -19,6 +21,6 @@ It assumes that your images are numbered like this:
 
 They have to have the exact same name, just differ by the number behind the `+` sign.
 
-# see also
+## see also
 
 [my blog post about this](http://www.martin-ueding.de/site/120115-multiimage.html)
