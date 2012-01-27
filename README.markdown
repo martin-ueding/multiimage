@@ -19,5 +19,6 @@ It assumes that your images are numbered like this:
 
 They have to have the exact same name, just differ by the number behind the `+` sign.
 
+# see also
 
 [my blog post about this](http://www.martin-ueding.de/site/120115-multiimage.html)
