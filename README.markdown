@@ -16,7 +16,11 @@ There are two ways to use this program.
 
 ### single filename
 
-Call it with a single image file. It assumes that your images are numbered like this:
+Call it with a single image file.
+
+	multiimage physik111-03-korrigiert+2.jpg
+
+It assumes that your images are numbered like this:
 
 	physik111-03-korrigiert+1.jpg
 	physik111-03-korrigiert+2.jpg
@@ -30,6 +34,8 @@ They have to have the exact same name, just differ by the number behind the `+` 
 ### multiple filenames
 
 No matter how your images are named, *multiimage* will display them in the order you specify on the command line.
+
+	multiimage physik111-03-korrigiert+1.jpg physik111-03-korrigiert+2.jpg physik111-03-korrigiert+3.jpg ...
 
 ## see also
 
