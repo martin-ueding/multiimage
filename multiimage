@@ -7,7 +7,8 @@
 Takes a single image file as argument and open the series in the browser.
 
 It assumes that your images are named C{something+1.ext}, C{something+2.ext}
-where only the number changes and there is no other C{+number} in the file name.
+where only the number changes and there is no other C{+number} in the file
+name.
 """
 
 import glob
