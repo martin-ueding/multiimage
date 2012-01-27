@@ -25,13 +25,32 @@ def main():
         print "Error: File argument needed."
         sys.exit(1)
 
-    infile = args[0]
-    if infile[0] != "/":
-        infile = os.getcwd()+"/"+infile
+    if len(args) == 1:
+        # Just found one image, trying to glob.
+        infile = args[0]
+        if infile[0] != "/":
+            infile = os.getcwd()+"/"+infile
 
-    pattern = re.sub(r"\+\d+", "+*", infile)
+        pattern = re.sub(r"\+\d+", "+*", infile)
+        files = sorted(glob.glob(pattern))
+    else:
+        # Using list from command line.
+        files = args
+        for infile in files:
+            if infile[0] != "/":
+                infile = os.getcwd()+"/"+infile
 
-    tempfile = write_html(sorted(glob.glob(pattern)))
+    multiopen(files)
+
+
+def multiopen(files):
+    """
+    Opens multiple image files.
+
+    @param files: List with filenames.
+    @type files: list
+    """
+    tempfile = write_html(files)
 
     open_in_browser(tempfile)
 
