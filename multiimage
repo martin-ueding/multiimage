@@ -6,11 +6,9 @@
 """
 Takes a single image file as argument and open the series in the browser.
 
-It assumes that your images are named `something+1.ext`, `something+2.ext`
-where only the number changes and there is no other `+number` in the file name.
+It assumes that your images are named C{something+1.ext}, C{something+2.ext}
+where only the number changes and there is no other C{+number} in the file name.
 """
-
-__docformat__ = "javadoc en"
 
 import glob
 import optparse
@@ -47,10 +45,10 @@ def open_in_browser(filename):
 
     Currently, this is Firefox.
 
-    @param filename File to open.
+    @param filename: File to open.
+    @type filename: str
     """
     subprocess.call(["firefox", filename])
-
 
 def write_html(filelist):
     """
@@ -59,8 +57,10 @@ def write_html(filelist):
     Some CSS is added to the header so that the pages look like in other PDF
     viewers. The target file is a temporary file.
 
-    @param filelist List with image files.
-    @return HTML file name.
+    @param filelist: List with image files.
+    @type filelist: list
+    @return: HTML file name.
+    @rtype: str
     """
     tmp = tempfile.NamedTemporaryFile(mode="w+", suffix=".html", delete=False)
 
