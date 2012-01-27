@@ -47,6 +47,7 @@ def open_in_browser(filename):
     """
     subprocess.call(["firefox", filename])
 
+
 def write_html(filelist):
     """
     Writes a HTML file with the given images.
