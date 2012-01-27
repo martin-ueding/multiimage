@@ -10,7 +10,13 @@ Opening a single picture in *Okular* yields what I need: Fit to page width, star
 
 This is a little script that generates a HTML page which combines all those images. A web browser starts at the top of the screen and is able to fit images to width of the window.
 
-It assumes that your images are numbered like this:
+## usage
+
+There are two ways to use this program.
+
+### single filename
+
+Call it with a single image file. It assumes that your images are numbered like this:
 
 	physik111-03-korrigiert+1.jpg
 	physik111-03-korrigiert+2.jpg
@@ -20,6 +26,10 @@ It assumes that your images are numbered like this:
 	physik111-03-korrigiert+6.jpg
 
 They have to have the exact same name, just differ by the number behind the `+` sign.
+
+### multiple filenames
+
+No matter how your images are named, *multiimage* will display them in the order you specify on the command line.
 
 ## see also
 
