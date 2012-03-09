@@ -37,9 +37,9 @@ def main():
     else:
         # Using list from command line.
         files = args
-        for infile in files:
-            if infile[0] != "/":
-                infile = os.getcwd()+"/"+infile
+        for i in range(len(files)):
+            if files[i][0] != "/":
+                files[i] = os.getcwd()+"/"+files[i]
 
     multiopen(files)
 
