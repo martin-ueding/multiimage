@@ -36,9 +36,10 @@ validate:
 
 .PHONY: clean
 clean:
+	$(RM) *.html
 	$(RM) *.pyc
-	$(RM) multiimagec
 	$(RM) -r html
+	$(RM) multiimagec
 
 ###############################################################################
 #                               Private Targets                               #
